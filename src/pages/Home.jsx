@@ -5,7 +5,17 @@ import HeroImg from '../assets/hero.png'
 const Home = () => {
   return (
     <>
-      <Box sx={{
+    <HeroSection/>
+    </>
+
+  )
+}
+
+export default Home;
+
+const HeroSection=()=>{
+  return(
+  <Box sx={{
         display: 'flex',
         flexDirection: { xs: 'column', md: 'row' },
         justifyContent: 'space-evenly',
@@ -59,9 +69,5 @@ const Home = () => {
           />
         </Box>
       </Box>
-    </>
-
   )
 }
-
-export default Home;
