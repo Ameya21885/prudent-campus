@@ -1,4 +1,4 @@
-import { Box, Button, Grid, Typography } from '@mui/material'
+import { Box, Button, Card, CardActionArea, CardContent, CardMedia, Grid, Typography } from '@mui/material'
 import React from 'react'
 import HeroImg from '../assets/hero.png'
 import camp1 from '../assets/camp1.png'
@@ -16,6 +16,7 @@ const Home = () => {
     <>
       <HeroSection />
       <CollabrationSection />
+      <ExploreCoursesSection />
     </>
 
   )
@@ -37,7 +38,7 @@ const HeroSection = () => {
     }}
     >
       <Box sx={{ width: { xs: '100%', md: '50%' }, px: 2 }}>
-        <Typography variant="h3" gutterBottom sx={{ fontWeight: 700 }}>
+        <Typography variant="h1" gutterBottom sx={{ fontWeight: 700 }}>
           Learn without limits
         </Typography>
         <Typography
@@ -96,7 +97,7 @@ const CollabrationSection = () => {
   return (
     <Box sx={{ py: 5, px: 2, backgroundColor: "#f1f1ff" }}>
       <Box textAlign="center" mb={4}>
-        <Typography variant="h4" sx={{ fontWeight: 'bold' }}>
+        <Typography variant="h3" sx={{ fontWeight: 'bold' }}>
           We collaborate with 350+{' '}
           <span style={{ textDecoration: 'underline' }}>
             leading universities and companies
@@ -113,21 +114,90 @@ const CollabrationSection = () => {
         {campusList.map(({ id, url, alt, link }) => (
           <Grid item xs={2} sm={2} md={3} key={id}>
             <Box
-                sx={{
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  height: "100%",
-                }}
-              >
-                <Link to={link}>
-                  <img
-                    src={url}
-                    alt={alt}
-                    style={{ maxWidth: "100%", height: "auto" }}
-                  />
-                </Link>
-              </Box>
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                height: "100%",
+              }}
+            >
+              <Link to={link}>
+                <img
+                  src={url}
+                  alt={alt}
+                  style={{ maxWidth: "100%", height: "auto" }}
+                />
+              </Link>
+            </Box>
+          </Grid>
+        ))}
+      </Grid>
+    </Box>
+  );
+};
+
+const exploreCourses = [
+  {
+    id: 1,
+    title: "C",
+    desc: "Learn C programming from scratch",
+    url: "https://i.pinimg.com/736x/7e/ed/dc/7eeddcd5d751449010c6a155bda93f01.jpg",
+  },
+  {
+    id: 2,
+    title: "C++",
+    desc: "Learn C++ programming from scratch",
+    url: "https://i.pinimg.com/736x/7e/ed/dc/7eeddcd5d751449010c6a155bda93f01.jpg",
+  },
+  {
+    id: 3,
+    title: "Java Full Stack",
+    desc: "Become a Java full stack developer",
+    url: "https://i.pinimg.com/736x/7e/ed/dc/7eeddcd5d751449010c6a155bda93f01.jpg",
+  },
+  {
+    id: 4,
+    title: "Python",
+    desc: "Master Python from basics to advanced",
+    url: "https://i.pinimg.com/736x/7e/ed/dc/7eeddcd5d751449010c6a155bda93f01.jpg",
+  },
+  {
+    id: 5,
+    title: "Java Full Stack",
+    desc: "Java Full Stack with Spring and React",
+    url: "https://i.pinimg.com/736x/7e/ed/dc/7eeddcd5d751449010c6a155bda93f01.jpg",
+  },
+  {
+    id: 6,
+    title: "Cyber Security",
+    desc: "Learn ethical hacking and defense",
+    url: "https://i.pinimg.com/736x/7e/ed/dc/7eeddcd5d751449010c6a155bda93f01.jpg",
+  },
+];
+
+const ExploreCoursesSection = () => {
+  return (
+    <Box sx={{ py: 8, px: 2 }}>
+      <Typography variant="h3" gutterBottom fontWeight="bold">
+        Explore Courses
+      </Typography>
+
+      <Grid container spacing={3}>
+        {exploreCourses.map(({ id, title, desc, url }) => (
+          <Grid item key={id} xs={12} sm={6} md={4}>
+            <Card sx={{ maxWidth: 345, margin: "auto" }}>
+              <CardActionArea sx={{display:"flex"}}>
+                <CardMedia component="img" height="180" image={url} alt={title} />
+                <CardContent>
+                  <Typography gutterBottom variant="h6" component="div">
+                    {title}
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    {desc}
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+            </Card>
           </Grid>
         ))}
       </Grid>
