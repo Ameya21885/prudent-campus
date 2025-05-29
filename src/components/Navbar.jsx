@@ -51,24 +51,24 @@ const pages = [
     link: "contact-us",
     icon: <ContactsIcon />,
   },
-  {
-    id: 4,
-    title: "Courses",
-    icon: <SchoolIcon />,
-    submenu: [
-      { id: 1, subtitle: "C", link: "/courses/c" },
-      { id: 2, subtitle: "C++", link: "/courses/cpp" },
-      { id: 3, subtitle: "Java", link: "/courses/java" },
-      { id: 4, subtitle: "Python", link: "/courses/python" },
-      { id: 5, subtitle: "MERN Stack", link: "/courses/mern" },
-      { id: 6, subtitle: "Java Full Stack", link: "/courses/java-full-stack" },
-      { id: 7, subtitle: "Data Science", link: "/courses/data-science" },
-      { id: 8, subtitle: "Cyber Security", link: "/courses/cyber-security" },
-    ]
-  }
+  // {
+  //   id: 4,
+  //   title: "Courses",
+  //   icon: <SchoolIcon />,
+  //   submenu: [
+  //     { id: 1, subtitle: "C", link: "/courses/c" },
+  //     { id: 2, subtitle: "C++", link: "/courses/cpp" },
+  //     { id: 3, subtitle: "Java", link: "/courses/java" },
+  //     { id: 4, subtitle: "Python", link: "/courses/python" },
+  //     { id: 5, subtitle: "MERN Stack", link: "/courses/mern" },
+  //     { id: 6, subtitle: "Java Full Stack", link: "/courses/java-full-stack" },
+  //     { id: 7, subtitle: "Data Science", link: "/courses/data-science" },
+  //     { id: 8, subtitle: "Cyber Security", link: "/courses/cyber-security" },
+  //   ]
+  // }
 ];
 
-const menuItems = pages.find(p => p.title === "Courses")?.submenu || [];
+// const menuItems = pages.find(p => p.title === "Courses")?.submenu || [];
 
 const Navbar = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -101,7 +101,9 @@ const Navbar = () => {
         <IconButton onClick={toggleDrawer(false)} aria-label="close navigation menu">
           <CloseIcon sx={{ border: "2px solid black", borderRadius: "20px", color: "black" }} />
         </IconButton>
+       
       </Box>
+<hr/>
 
       <List>
         {pages.map((item) => {
@@ -151,7 +153,7 @@ const Navbar = () => {
   );
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" sx={{ backgroundColor: 'white', color: 'black' }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
@@ -199,19 +201,19 @@ const Navbar = () => {
                 key={id}
                 component={Link}
                 to={link}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                sx={{ my: 2, color: 'black', display: 'block' }}
               >
                 {title}
               </Button>
             ))}
 
-            <Button
+            {/* <Button
               id="basic-button"
               aria-controls={isMenuOpen ? 'basic-menu' : undefined}
               aria-haspopup="true"
               aria-expanded={isMenuOpen ? 'true' : undefined}
               onClick={handleMenuClick}
-              sx={{ my: 2, color: 'white', display: 'block' }}
+              sx={{ my: 2, color: 'black', display: 'block' }}
             >
               Courses
             </Button>
@@ -234,7 +236,7 @@ const Navbar = () => {
                   {subtitle}
                 </MenuItem>
               ))}
-            </Menu>
+            </Menu> */}
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
