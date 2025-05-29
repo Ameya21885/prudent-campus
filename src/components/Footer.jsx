@@ -6,7 +6,10 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import HomeIcon from "@mui/icons-material/Home";
 import GroupIcon from "@mui/icons-material/Group";
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import YouTubeIcon from '@mui/icons-material/YouTube';
 import { Box, Typography, IconButton } from "@mui/material";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -31,7 +34,7 @@ const Footer = () => {
             textAlign: { xs: "center", md: "left" },
           }}
         >
-          <img src="/icon.jpg" alt="" width={60} style={{borderRadius:'40px'}}/>
+          <img src="/icon.jpg" alt="Prudent Campus Logo" width={60} style={{ borderRadius: '40px' }} />
           <Typography variant="h6" gutterBottom sx={{ fontWeight: "bold" }}>
             Prudent Campus
           </Typography>
@@ -39,11 +42,48 @@ const Footer = () => {
             Leading provider of innovative solutions for businesses.
           </Typography>
           <Box>
-            <IconButton sx={{ color: "#f8f9fa", mr: 1 }} aria-label="facebook">
+            <IconButton
+              component="a"
+              href="https://www.facebook.com/yourpage"
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{ color: '#f8f9fa' }}
+              aria-label="Facebook"
+            >
               <FacebookIcon />
             </IconButton>
-            <IconButton sx={{ color: "#f8f9fa" }} aria-label="instagram">
+
+            <IconButton
+              component="a"
+              href="https://www.instagram.com/yourprofile"
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{ color: '#f8f9fa' }}
+              aria-label="Instagram"
+            >
               <InstagramIcon />
+            </IconButton>
+
+            <IconButton
+              component="a"
+              href="https://www.linkedin.com/in/yourprofile"
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{ color: '#f8f9fa' }}
+              aria-label="LinkedIn"
+            >
+              <LinkedInIcon />
+            </IconButton>
+
+            <IconButton
+              component="a"
+              href="https://www.youtube.com/channel/yourchannelid"
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{ color: '#f8f9fa' }}
+              aria-label="YouTube"
+            >
+              <YouTubeIcon />
             </IconButton>
           </Box>
         </Box>
@@ -64,15 +104,35 @@ const Footer = () => {
             </Typography>
             <Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
               <HomeIcon sx={{ mr: 1, color: "#adb5bd" }} />
-              <Typography variant="body2">Home</Typography>
-            </Box>
+              <Typography
+                component={Link}
+                to="/"
+                variant="body2"
+                sx={{ textDecoration: "none", color: "#f8f9fa", '&:hover': { textDecoration: "underline" } }}
+              >
+                Home
+              </Typography>            </Box>
             <Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
               <GroupIcon sx={{ mr: 1, color: "#adb5bd" }} />
-              <Typography variant="body2">About us</Typography>
+              <Typography
+                component={Link}
+                to="about-us"
+                variant="body2"
+                sx={{ textDecoration: "none", color: "#f8f9fa", '&:hover': { textDecoration: "underline" } }}
+              >
+                About us
+              </Typography>
             </Box>
             <Box sx={{ display: "flex", alignItems: "center" }}>
               <EmailIcon sx={{ mr: 1, color: "#adb5bd" }} />
-              <Typography variant="body2">Contact</Typography>
+              <Typography
+                component={Link}
+                to="contact-us"
+                variant="body2"
+                sx={{ textDecoration: "none", color: "#f8f9fa", '&:hover': { textDecoration: "underline" } }}
+              >
+                Contact
+              </Typography>
             </Box>
           </Box>
 
@@ -83,7 +143,7 @@ const Footer = () => {
             </Typography>
             <Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
               <AddIcCallIcon sx={{ mr: 1, color: "#adb5bd" }} />
-              <Typography variant="body2">9675141090</Typography>
+              <Typography variant="body2">+91 8530506623, or +91 8857856623</Typography>
             </Box>
             <Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
               <EmailIcon sx={{ mr: 1, color: "#adb5bd" }} />
@@ -113,7 +173,7 @@ const Footer = () => {
           px: 4,
         }}
       >
-        <Typography variant="body2">© 2024 Dr.Sharma Homoepathy</Typography>
+        <Typography variant="body2">© 2024 Prudent Campus</Typography>
       </Box>
     </Box>
   );
