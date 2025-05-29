@@ -239,13 +239,13 @@ const Navbar = () => {
             </Menu> */}
           </Box>
 
-          <Box sx={{ flexGrow: 0 }}>
+         <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton sx={{ p: 0 }}>
                 <Avatar alt="User Avatar" src="/static/images/avatar/2.jpg" />
               </IconButton>
             </Tooltip>
-          </Box>
+          </Box> 
         </Toolbar>
       </Container>
     </AppBar>
